@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: myapp
+  namespace: test
+spec:
+  selector:
+    app: myapp
+  ports:
+  - name: port-monggo
+    port: 27017
+    targetPort: 27017
+  - name: port-nginx
+    port: 80
+    targetPort: 8080
