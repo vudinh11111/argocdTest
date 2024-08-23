@@ -22,6 +22,9 @@ spec:
             cpu: "500m"
         ports:
         - containerPort: 27017
+        volumeMounts:
+        - name: mongo-storage
+          mountPath: /data/db
       - name: nginx-container
         image: nginx:latest
         resources:
@@ -30,3 +33,8 @@ spec:
             cpu: "500m"
         ports:
         - containerPort: 80
+      volumes:
+      - name: mongo-storage
+        persistentVolumeClaim:
+          claimName: my-pvc
+
