@@ -4,6 +4,7 @@ metadata:
   name: quynhbao
   namespace: test
 spec:
+  replicas: 3
   selector:
     matchLabels:
       app: myapp
